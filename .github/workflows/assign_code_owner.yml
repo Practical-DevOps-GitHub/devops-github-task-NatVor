@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Assign Code Owner
-        uses: peter-evans/create-pull-request@v3
+        uses: NatVor/create-pull-request@v3
         with:
           token: ${{ secrets.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 }}
           commit-message: "Assign code owner as per CODEOWNERS file"
