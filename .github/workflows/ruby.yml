@@ -50,7 +50,7 @@ jobs:
               -d "{\"invitee_id\": $user}"
           done
       - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
+        uses: ruby/setup-ruby@v2
         with:
           ruby-version: '3.2'
           working-directory: '.github/tests'
