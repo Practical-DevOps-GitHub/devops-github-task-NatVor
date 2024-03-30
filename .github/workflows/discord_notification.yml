@@ -1,0 +1,54 @@
+const fetch = require('node-fetch');
+
+// Discord webhook URL
+const webhookURL = 'https://discord.com/invite/jY7AJP52';
+
+// Pull request creation event information (additional data can be added as needed)
+const pullRequestInfo = {
+    username: 'GitHub Actions',
+    avatar_url: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png',
+    content: 'A new pull request has been created!',
+    embeds: [
+        {
+            title: 'New pull request',
+            description: 'Information about the new pull request',
+            color: 16711680, // Red color
+            fields: [
+                {
+                    name: 'Author',
+                    value: 'Pull request author',
+                    inline: true
+                },
+                {
+                    name: 'Title',
+                    value: 'Pull request title',
+                    inline: true
+                },
+                {
+                    name: 'Link',
+                    value: 'Pull request link',
+                    inline: false
+                }
+            ]
+        }
+    ]
+};
+
+// Execute HTTP request to Discord webhook
+fetch(webhookURL, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(pullRequestInfo)
+})
+.then(response => {
+    if (response.ok) {
+        console.log('Notification successfully sent to Discord');
+    } else {
+        console.error('Error sending notification to Discord');
+    }
+})
+.catch(error => {
+    console.error('Error executing HTTP request:', error);
+}); 
