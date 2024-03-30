@@ -1,0 +1,17 @@
+name: Assign Code Owner
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  assign_code_owner:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Assign Code Owner
+        uses: github/codeowners@v2
+        with:
+          codeowners: |
+            * softservedata
+        env:
+          GITHUB_TOKEN: ${{ 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 }}
