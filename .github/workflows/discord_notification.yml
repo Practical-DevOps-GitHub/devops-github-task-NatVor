@@ -1,0 +1,15 @@
+name: Discord Notification
+
+on:
+  pull_request:
+    types: [opened, reopened] 
+
+jobs:
+  send_notification:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Discord Notification
+        env:
+          WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }} # Збережіть URL вебхуку в секретах вашого репозиторію
+        run: |
+          curl -H "Content-Type: application/json" -d '{"content":"New pull request created!"}' -X POST ${{ secrets.DISCORD_WEBHOOK_URL }}
