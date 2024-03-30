@@ -5,7 +5,7 @@ const webhookURL = 'https://discord.com/invite/jY7AJP52';
 
 // Pull request creation event information (additional data can be added as needed)
 const pullRequestInfo = {
-    username: 'GitHub Actions',
+    username: GitHub Actions,
     avatar_url: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png',
     content: 'A new pull request has been created!',
     embeds: [
