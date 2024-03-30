@@ -1,6 +1,6 @@
 const fetch = require('node-fetch');
 
-// Discord  webhook URL
+//  Discord  webhook URL
 const webhookURL = 'https://discord.com/invite/jY7AJP52';
 
 // Pull request creation event information (additional data can be added as needed)
