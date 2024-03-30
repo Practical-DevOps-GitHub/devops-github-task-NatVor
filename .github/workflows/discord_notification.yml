@@ -10,6 +10,6 @@ jobs:
     steps:
       - name: Send Discord Notification
         env:
-          WEBHOOK_URL: ${{ secrets.https://discord.com/api/webhooks/1223682097173237850/PALbrFVVzjEyeZwQ8fE_QRlAI5BRSj1gIaDr3tLBBLfXPK-oQ7JuPA676tL3oMQLmLDK }} # Збережіть URL вебхуку в секретах вашого репозиторію
+          WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }} # Збережіть URL вебхуку в секретах вашого репозиторію
         run: |
-          curl -H "Content-Type: application/json" -d '{"content":"New pull request created!"}' -X POST $https://discord.com/api/webhooks/1223682097173237850/PALbrFVVzjEyeZwQ8fE_QRlAI5BRSj1gIaDr3tLBBLfXPK-oQ7JuPA676tL3oMQLmLDK
+          curl -H "Content-Type: application/json" -d '{"content":"New pull request created!"}' -X POST ${{ secrets.DISCORD_WEBHOOK_URL }}
