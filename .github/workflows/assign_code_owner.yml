@@ -14,4 +14,4 @@ jobs:
           codeowners: |
             * softservedata
         env:
-          GITHUB_TOKEN: ${{ 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 }}
+          GITHUB_TOKEN: ${{ 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 }}
